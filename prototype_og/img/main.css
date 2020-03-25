@@ -1,0 +1,67 @@
+.z-depth-0 {
+
+	background-color:#011039 !important;
+height: 120px;
+
+}
+  .nav-wrapper {
+
+	background-color:#011039 !important;;
+    font-size: 14px;
+	font-weight: bold;
+	font-family: Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+  }
+
+
+
+  .steps {
+	  text-align: right;
+  }
+  .calculated {
+	  width: 100%;
+	  column-width: 100%;
+	font-size: 9px;
+} 
+/* 
+.prompts {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.prompt_additional {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+.prompts_super {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	vertical-align: super;
+}
+.entered {
+	font-family: "Courier New", Courier, monospace;
+	font-size: medium;
+	color: #000000;
+	background-color: #33CCFF;
+}
+
+/* .steps {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	color: #0000FF;
+	text-align: right;
+}
+.usd {
+	font-family: "Courier New", Courier, monospace;
+	font-size: medium;
+	color: #000000;
+	background-color: #33CC33;
+	text-align: right;
+}
+.nb {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #FF0000;
+}
+.ss {
+	font-size: x-small;
+	vertical-align: super;
+} */ 

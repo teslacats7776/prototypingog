@@ -1,0 +1,651 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="img/main.css" rel="stylesheet" type="text/css">
+  
+  <title>GameGuidez</title>
+</head>
+
+<body class="grey lighten-3">
+
+  <!-- NAVBAR -->
+  <nav class="z-depth-0">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="img/APL_Logo.png" style="width: 180px;  margin-top: 7px;">
+      </a>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="https://www.apllogistics.com/" class="white-text">APL Logistics</a></li>
+        <li><a href="https://myportal.apllogistics.com/" class="white-text">My Portal</a></li>
+        <li class="logged-in">
+          <a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
+        </li>
+        <li class="logged-in">
+          <a href="#" class="white-text" id="logout">Logout</a>
+        </li>
+        <li class="logged-in">
+          <a href="#" class="white-text modal-trigger" data-target="modal-create">Create Guide</a>
+        </li>
+        <li class="logged-out">
+          <a href="#" class="white-text modal-trigger" data-target="modal-login">Login</a>
+        </li>
+        <li class="logged-out">
+          <a href="#" class="white-text modal-trigger" data-target="modal-signup">Sign up</a>
+        </li>
+
+
+        </span>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- SIGN UP MODAL -->
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="modal-login" class="modal">
+    <div class="modal-content">
+      <h4>Login</h4><br />
+      <form id="login-form">
+        <div class="input-field">
+          <input type="email" id="login-email" required />
+          <label for="login-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="login-password" required />
+          <label for="login-password">Your password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ACCOUNT MODAL -->
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
+
+  <!-- CREATE GUIDE MODAL -->
+  <div id="modal-create" class="modal">
+    <div class="modal-content">
+      <h4>Create Guide</h4><br />
+      <form id="create-form">
+        <div class="input-field">
+          <input type="text" id="title" required>
+          <label for="title">Guide Title</label>
+        </div>
+        <div class="input-field">
+          <textarea id="content" class="materialize-textarea" required></textarea>
+          <label for="content">Guide Content</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Create</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- GUIDE LIST -->
+  <div class="container" style="margin-top: 40px;">
+    <ul class="collapsible z-depth-0 guides" style="border: none;">
+
+      <li>
+        <div class="collapsible-header grey lighten-4"><P>Get Your <b> LCL </b> Ocean Guaranteed Rate Today</P></div>
+        <div class="collapsible-body white">
+          
+          <!-- <form id="form1" name="form1" method="post"
+          action="http://apll.ghostsinthemachines.com/ogccalc.php?k=20022r0aM&amp;n=christinat"> -->
+          <form id="form1" name="form1" >
+          <table >
+            <tbody>
+
+
+              <tr>
+                <td >&nbsp;</td>
+                <td colspan="4" class="prompts">Please complete items 1-4. Your rate will display on line 13. Please
+                  note that the Fuel Surcharge (Line 11) is adjusted monthly. </td>
+                <td colspan="3">&nbsp;</td>
+                <td><input type="reset" name="reset" id="reset" value="Clear"></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="prompts">1</td>
+                <td colspan="2" class="prompts">Origin</td>
+                <td>
+                  <div align="right"><span class="steps">Step 1</span></div>
+                </td>
+                <td colspan="2"><select name="origin" id="origin" class='dropdown-trigger btn'
+                    data-target='dropdown1'>
+                    <ul id='dropdown1' class='dropdown-content'>
+                      <option value="0.05-WC">Bangkok</option>
+                      <option value="0.00-WC">Busan</option>
+                      <!--      <option value="0.15-WC">Haiphong</option> -->
+                      <option value="0.05-WC">Ho Chi Minh</option>
+                      <option value="0.00-WC">Hong Kong</option>
+                      <!--      <option value="0.00-EC">Hong Kong - EC</option> -->
+                      <option value="0.05-WC">Jakarta</option>
+                      <option value="0.00-WC">Kaoshiung</option>
+                      <option value="0.00-WC">Ningbo</option>
+                      <option value="0.00-WC">Qingdao</option>
+                      <option value="0.00-WC">Shanghai</option>
+                      <!--      <option value="0.00-EC">Shanghai - EC</option> -->
+                      <option value="0.00-WC">Shenzhen</option>
+                      <!--      <option value="0.00-EC">Shenzhen - EC</option> -->
+                      <option value="0.00-WC">Singapore</option>
+                      <option value="0.00-WC">Xiamen</option>
+                      <!--      <option value="0.00-WC">Yokohama</option> -->
+                    </ul>
+                  </select></td>
+                <td colspan="2">&nbsp;</td>
+                <td class="prompts">20 Mar 2020&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="prompts">2</td>
+                <td colspan="2" class="prompts">
+                  <div align="left">Enter Shipping weight in Kilograms</div>
+                </td>
+                <td class="prompts">
+                  <div align="right"><span class="steps">Step 2</span></div>
+                </td>
+                <td><input name="weight_kg" type="text" class="entered" id="weight_kg" size="10" maxlength="8"></td>
+                <td width="56" colspan="3" class="prompts">kgs</td>
+                <td width="102"><input name="weight_cwt" type="text" class="calculated" id="weight_cwt" size="10"
+                    readonly="readonly"></td>
+                <td width="59" class="prompts">CWT</td>
+              </tr>
+              <tr>
+                <td class="prompts">3</td>
+                <td colspan="2" class="prompts">Enter Shipment Volume in Cubic Meters</td>
+                <td class="prompts">
+                  <div align="right"><span class="steps">Step 3</span></div>
+                </td>
+                <td><input name="volume_cbms" type="text" class="entered" id="volume_cbms" onfocus="density()"
+                    onblur="density()" onchange="density()" onkeyup="density()" size="10"></td>
+                <td colspan="3" class="prompts">CBMs</td>
+                <td><input name="adensity" type="text" class="calculated" id="adensity" size="10" readonly="readonly">
+                </td>
+                <td class="prompts">Kg/M<span class="prompts_super">3</span></td>
+              </tr>
+              <tr>
+                <td class="prompts">4</td>
+                <td colspan="3" class="prompts">Density Pivot Determination </td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="density_pivot" type="text" class="calculated" id="density_pivot" size="10"></td>
+                <td><span class="prompts">Kg/M<span class="prompts_super">3</span></span></td>
+              </tr>
+              <tr>
+                <td class="prompts">5</td>
+                <td colspan="3" class="prompts">Chargeable weight <span class="prompt_additional">(Larger of Line 2 or
+                    Line 4) </span></td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="chrg_weight" type="text" class="calculated" id="chrg_weight" size="10"
+                    readonly="readonly"></td>
+                <td class="prompts">Kg</td>
+              </tr>
+              <tr>
+                <td class="prompts">6</td>
+                <td colspan="2" class="prompts">Rate Zone - Enter your zip or postal code </td>
+                <td class="steps" >Step 4 </td>
+                <td><select name="Country" id="Country" class='dropdown-trigger btn' data-target='dropdown2'>
+                    <ul id='dropdown2' class='dropdown-content'>
+                      <option value="us">United States</option>
+                      <option value="ca">Canada</option>
+                      <option value="mx">Mexico</option>
+                    </ul>
+                  </select>
+                </td>
+                <td colspan="3"><input name="zipcode" type="text" class="entered" id="zipcode" onblur="zipit()"
+                    onchange="zipit()" size="12"></td>
+                <td><input name="zone" type="text" class="calculated" id="zone" size="3" readonly="readonly"> <input
+                    name="zstate" type="text" class="calculated" id="zstate" size="3" readonly="readonly"></td>
+                <td class="prompts">Zone</td>
+              </tr>
+              <tr>
+                <td class="prompts">7</td>
+                <td colspan="3" class="prompts">Price per kilogram <span class="prompt_additional">(Zone Rate) </span>
+                </td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="price_kg" type="text" class="usd" id="price_kg" size="12" readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">8</td>
+                <td colspan="3" class="prompts">Shipping Charge <span class="prompt_additional">(Line 5 X Line 7)
+                  </span></td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="calc_ship_chg" type="text" class="usd" id="calc_ship_chg" size="12"
+                    readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">9</td>
+                <td colspan="3" class="prompts">Minimum Shipping Charge<span class="prompt_additional">
+                    <!-- ($325 USD minimum per shipment) --></span></td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="mc" type="text" class="usd" id="mc" size="12" readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">10</td>
+                <td colspan="3" class="prompts">Shipment Rate (Larger of Line 8 and Line 9) </td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="ship_rate" type="text" class="usd" id="ship_rate" size="12" readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">11</td>
+                <td colspan="3" class="prompts">March Fuel Surcharge <span class="prompt_additional">(Line 10 x
+                    26.3%)</span> </td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="fuel" type="text" class="usd" id="fuel" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">12</td>
+                <td colspan="3" class="prompts">Additional Destination Charges <span
+                    class="prompt_additional">(accessorial options below)</span> </td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="dest_charges" type="text" class="usd" id="dest_charges" size="12"
+                    readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">13</td>
+                <td colspan="3" class="prompts">Peak Season Surcharge <span class="prompt_additional">(Currently not
+                    in effect)
+                    <!--(Effective 8/1/2010 until 10/31/2010)--> </span></td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="pss" type="text" class="usd" id="pss" size="12" readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">14</td>
+                <td colspan="3" class="prompts"><strong>Total Charges </strong><span class="prompt_additional">(Total
+                    Lines 10 + 11 + 12 + 13) </span></td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="total" type="text" class="usd" id="total" size="12" readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td width="69">&nbsp;</td>
+                <td width="206">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td colspan="4" class="prompts">Additional Charges and Accessorial Surcharges</td>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="prompts">A</td>
+                <td colspan="2" class="prompts">Lift Gate Service (LIFT) </td>
+                <td><span class="prompts">$5.50/CWT Min $117.00 </span></td>
+                <td>
+                  <label>
+                    <input name="lift" type="radio" class="entered" onclick="liftit()" value="Yes">
+                    <span class="prompts">Yes</span></label>
+                  <label>
+                    <input name="lift" type="radio" class="entered" onclick="liftit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="liftcost" type="text" class="usd" size="12" readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">B</td>
+                <td colspan="2" class="prompts">Inside Delivery (iDELV) </td>
+                <td class="prompts">$7.00/CWT Min $41.00 </td>
+                <td>
+                  <label>
+                    <input name="idelv" type="radio" class="entered" onclick="idelvit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+
+                  <label>
+                    <input name="idelv" type="radio" class="entered" onclick="idelvit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="idelvcost" type="text" class="usd" id="idelvcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <!--   <td class="prompts">C</td>
+            <td colspan="2" class="prompts">Hazardous Materials (HazMat) </td>
+            <td class="prompts">$20.00/Shipment </td>
+            <td>
+          <label>
+            <input name="hazmat" type="radio" class="entered" onClick="hazmatit()" value="Yes" />
+            <span class="prompts">        Yes</span></label>
+         
+          <label>
+            <input name="hazmat" type="radio" class="entered" onClick="hazmatit()" value="No" checked="checked" />
+            <span class="prompts">No</span></label>    </td>
+        <td colspan="3">&nbsp;</td>
+        <td><input name="hazmatcost" type="text" class="usd" id="hazmatcost" size="12" /></td>
+        <td class="prompts">USD</td>
+      </tr>--> <input type="hidden" value="No" name="hazmat"><input type="hidden" name="hazmatcost" value="0">
+              </tr>
+              <tr>
+                <td class="prompts">C</td>
+                <td colspan="2" class="prompts">Notification Prior to Delivery (NPtD) </td>
+                <td class="prompts">$30.50/Shipment</td>
+                <td>
+                  <label>
+                    <input name="nptd" type="radio" class="entered" onclick="nptdit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+
+                  <label>
+                    <input name="nptd" type="radio" class="entered" onclick="nptdit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="nptdcost" type="text" class="usd" id="nptdcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">D</td>
+                <td colspan="2" class="prompts">After Business Hours Delivery (afHR) </td>
+                <td class="prompts">$74.00/Hour <br>Min $70.00</td>
+                <td>
+                  <label>
+                    <input name="afhr" type="radio" class="entered" onclick="afhrit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+
+                  <label>
+                    <input name="afhr" type="radio" class="entered" onclick="afhrit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+
+                <td><input name="af_hrs" type="text" class="entered" id="af_hrs" onchange="afhrit()" value="0"
+                    size="3"></td>
+                <td>:</td>
+                <td><input name="af_min" type="text" class="entered" id="af_min" onchange="afhrit()" value="0"
+                    size="3"></td>
+                <td><input name="afhrcost" type="text" class="usd" id="afhrcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">E</td>
+                <td colspan="2" class="prompts">Detention with Power hh:mm (DETN) </td>
+                <td class="prompt_additional">$29.00/15 min. Min $35.50 </td>
+                <td>
+                  <label>
+                    <input name="detn" type="radio" class="entered" onclick="detnit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="detn" type="radio" class="entered" onclick="detnit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+                <td><input name="detn_hrs" type="text" class="entered" id="detn_hrs" onchange="detnit()" value="0"
+                    size="3"></td>
+                <td>:</td>
+                <td><input name="detn_min" type="text" class="entered" id="detn_min" onchange="detnit()" value="0"
+                    size="3"></td>
+                <td><input name="detncost" type="text" class="usd" id="detncost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">F</td>
+                <td colspan="2" class="prompts">Fork Lift Service hh:mm (FRK) </td>
+                <td class="prompts">$45.00/30 min. </td>
+                <td>
+                  <label>
+                    <input name="frk" type="radio" class="entered" onclick="frkit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="frk" type="radio" class="entered" onclick="frkit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+                <td><input name="frk_hrs" type="text" class="entered" id="frk_hrs" onchange="frkit()" value="0"
+                    size="3"></td>
+                <td>:</td>
+                <td><input name="frk_min" type="text" class="entered" id="frk_min" onchange="frkit()" value="0"
+                    size="3"></td>
+                <td><input name="frkcost" type="text" class="usd" id="frkcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">G</td>
+                <td colspan="2" class="prompts">Residential Delivery Service (DELV) </td>
+                <td><span class="prompts">$7.50/CWT<br> Min $73.50 </span></td>
+                <td>
+                  <label>
+                    <input name="delv" type="radio" class="entered" onclick="delvit()" value="Yes">
+                    <span class="prompts">Yes</span></label>
+                  <label>
+                    <input name="delv" type="radio" class="entered" onclick="delvit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="delvcost" type="text" class="usd" size="12" readonly="readonly"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">H</td>
+                <td colspan="2" class="prompts">Island Delivery Fee (ILND) </td>
+                <td class="prompts">$92.50/Shipment</td>
+                <td><label>
+                    <input name="ilnd" type="radio" class="entered" onclick="ilndit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="ilnd" type="radio" class="entered" onclick="ilndit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label></td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="ilndcost" type="text" class="usd" id="ilndcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">I</td>
+                <td colspan="2" class="prompts">
+                  <p>In-bond Freight (IBF)<br>
+                    <span class="prompt_additional">Applies to Mexico And Canada</span></p>
+                </td>
+                <td class="prompts">$2.75/CWT Min $98.00</td>
+                <td><label>
+                    <input name="ibf" type="radio" class="entered" onclick="ibfit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="ibf" type="radio" class="entered" onclick="ibfit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label></td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="ibfcost" type="text" class="usd" id="ibfcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">J</td>
+                <td colspan="2" class="prompts">
+                  <p>Sufferance Warehouse (SW)<br>
+                    <span class="prompt_additional">Applies to Canada</span></p>
+                </td>
+                <td class="prompts">$1.60/CWT Min $38.00</td>
+                <td><label>
+                    <input name="sw" type="radio" class="entered" onclick="swit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="sw" type="radio" class="entered" onclick="swit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label></td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="swcost" type="text" class="usd" id="swcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">K</td>
+                <td colspan="2" class="prompts">
+                  <p>Homeland Security Fee (HSF)<br>
+                    <span class="prompt_additional">Applies to Canada</span></p>
+                </td>
+                <td class="prompts">$12.00/Shipment</td>
+                <td><label>
+                    <input name="hsf" type="radio" class="entered" onclick="hsfit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="hsf" type="radio" class="entered" onclick="hsfit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label></td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="hsfcost" type="text" class="usd" id="hsfcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">L</td>
+                <td colspan="2" class="prompts">Storage Days (STO) </td>
+                <td class="prompts">$3.25/CWT per 24hrs. $74.00 Min. </td>
+                <td>
+                  <label>
+                    <input name="sto" type="radio" class="entered" onclick="stoit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="sto" type="radio" class="entered" onclick="stoit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label> </td>
+                <td><input name="sto_days" type="text" class="entered" id="sto_days" onchange="stoit()" value="0"
+                    size="4"></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><input name="stocost" type="text" class="usd" id="stocost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">M</td>
+                <td colspan="2" class="prompts">
+                  <p>Excessive Length (ELEN)<br>
+                    <span class="prompt_additional">May be applied after shipment in transit</span></p>
+                </td>
+                <td class="prompts">$29.00/Shipment</td>
+                <td><label>
+                    <input name="elen" type="radio" class="entered" onclick="elenit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="elen" type="radio" class="entered" onclick="elenit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label></td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="elencost" type="text" class="usd" id="elencost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td class="prompts">N</td>
+                <td colspan="2" class="prompts">
+                  <p>Redelivery (RED)<br>
+                    <span class="prompt_additional">May be applied after shipment in transit</span></p>
+                </td>
+                <td class="prompts">$7.00/CWT Min. $53.00</td>
+                <td><label>
+                    <input name="red" type="radio" class="entered" onclick="redit()" value="Yes">
+                    <span class="prompts"> Yes</span></label>
+                  <label>
+                    <input name="red" type="radio" class="entered" onclick="redit()" value="No" checked="checked">
+                    <span class="prompts">No</span></label></td>
+                <td colspan="3">&nbsp;</td>
+                <td><input name="redcost" type="text" class="usd" id="redcost" size="12"></td>
+                <td class="prompts">USD</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td colspan="7" valign="top" class="prompts">
+                  <p>Freight-All-Kinds (FAK) rates are subject to:<br>
+                    1. Origin Surcharges (Paid by Shipper if FOB)<br>
+                    2. $350 USD Minimum Charge for US and Canadian Destinations. $400 for Mexico.<br>
+                    3. Density Pivot: Minimum 166kgs per CBM<br>
+                    4. The Fuel Surcharge is floating, and adjusted 1st of each month. It is calculated on the basis
+                    of combined ocean and trucking costs.
+                    <!-- The February Fuel Surcharge was 26.3% --><br>
+                    5. Shipment Mode: Origin CFS to Door Delivery (CFS-SDD)<br>
+                  </p>
+                </td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td colspan="5" class="prompts"><strong>Note: </strong>Actual rate will be based on Chargeable Weight
+                  and Dimensions of shipment tendered to APL Logistics. Shipments originating from Guangzhou have a
+                  10¢ per kilo premium, from Bangkok a 5¢ per kilo premium and from Ho Chi Minh a 5¢ premium.<br>
+                  Rates valid from 1 January 2018 through 31 December 2020.<br>
+                  <!--Rates are subject to Peak Season Surcharges at 2 cents per kilo from 11 August, 2010 <u>till 31 October 2010</u>. Peak season surcharge was at 5 cents per kilo from 1 August – 10 August, 2010.-->
+                  <!--31 December 2020-->
+                </td>
+                <td colspan="2">&nbsp;</td>
+                <td colspan="2">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </form>
+
+
+
+
+
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header grey lighten-4"><P>Get Your <b> FCL </b> Ocean Guaranteed Rate Today</P></div>
+        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDvdJuH7joeNNQ6zGEVUkpw7tprWt7ryek",
+      authDomain: "trainschedule-93d9c.firebaseapp.com",
+      databaseURL: "https://trainschedule-93d9c.firebaseio.com",
+      projectId: "trainschedule-93d9c",
+      storageBucket: "trainschedule-93d9c.appspot.com",
+      messagingSenderId: "503338779333",
+      appId: "1:503338779333:web:67f09a6622b734fee0e6ac"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
